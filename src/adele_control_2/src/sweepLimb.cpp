@@ -33,6 +33,7 @@ int main(int argc, char** argv){
     singleJoint.directCommandWrite(0, -0.785);
     ROS_INFO_STREAM("Writing command for -0.785 position");
     singleJoint.writeCommandsToHardware();
+    ROS_INFO_STREAM("Translated command: "<<singleJoint.directCommandAccess(1) );
     std_msgs::Float32 commandMsg;
     commandMsg.data = static_cast<float>(singleJoint.directCommandAccess(1));
     sweepPub.publish(commandMsg);
@@ -40,6 +41,7 @@ int main(int argc, char** argv){
 
     singleJoint.directCommandWrite(0, 0.785);
     singleJoint.writeCommandsToHardware();
+    ROS_INFO_STREAM("Translated command: "<<singleJoint.directCommandAccess(1) );
     commandMsg.data = static_cast<float>(singleJoint.directCommandAccess(1));
     sweepPub.publish(commandMsg);
     sleep(3);

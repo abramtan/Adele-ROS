@@ -15,7 +15,7 @@ AdeleHW::AdeleHW(){
 }
 
 AdeleHW::AdeleHW(const ros::NodeHandle& nh, urdf::Model* urdf_model):
-    nh_(nh), urdf_model_(urdf_model), name_("AdeleHW/adele_hw_interface")
+    nh_(nh), urdf_model_(urdf_model), name_("adele_hw_interface")
 {
     
     
