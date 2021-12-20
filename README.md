@@ -35,7 +35,7 @@ There are two critical scripts for adele_control_2:
 Serves to define the AdeleHW class.
 ##### AdeleHW(const ros::NodeHandle& nh, urdf::Model* urdf_model)
 Constructor, accepts 2 parameters.
-- nh: accepts the calling script's node handle by reference
-- \*urdf_model: a pointer to the urdf model object 
+- & nh: accepts the calling script's node handle by reference
+- \* urdf_model: a pointer to the urdf model object 
   - can also be provided as NULL, in which case, the script will try to read the urdf from the ROS parameter server
 ##### 
