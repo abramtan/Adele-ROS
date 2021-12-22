@@ -5,7 +5,7 @@
 int main(int argc, char** argv){
     ros::init(argc, argv, "single_joint_command");
     ros::NodeHandle nh;
-    std::string xml, xml_add;
+    // std::string xml, xml_add;
     ros::AsyncSpinner spinner(3);
 
     // if(nh.searchParam("dummy_xml", xml_add)){
@@ -30,16 +30,18 @@ int main(int argc, char** argv){
 
     spinner.start();
     ROS_INFO_STREAM("Spinner started.");
-    singleJoint.directCommandWrite(1, -0.785);
+    singleJoint.directCommandWrite(5, -0.785);
     ROS_INFO_STREAM("Writing command for -0.785 position");
     singleJoint.writeCommandsToHardware();
+    ROS_INFO_STREAM("Translated command: "<<singleJoint.directCommandAccess(1) );
     std_msgs::Float32 commandMsg;
     commandMsg.data = static_cast<float>(singleJoint.directCommandAccess(1));
     sweepPub.publish(commandMsg);
     sleep(3);
 
-    singleJoint.directCommandWrite(1, 0.785);
+    singleJoint.directCommandWrite(5, 0.785);
     singleJoint.writeCommandsToHardware();
+    ROS_INFO_STREAM("Translated command: "<<singleJoint.directCommandAccess(1) );
     commandMsg.data = static_cast<float>(singleJoint.directCommandAccess(1));
     sweepPub.publish(commandMsg);
     sleep(3);

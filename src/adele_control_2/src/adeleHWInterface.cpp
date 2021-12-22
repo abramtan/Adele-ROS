@@ -266,10 +266,17 @@ void AdeleHW::write(ros::Duration& elapsed_time){
 void AdeleHW::directCommandWrite(int linkNo, double commandValue){
     ROS_INFO_STREAM("Attempting to directly write value "<< commandValue <<" to joint " << joint_names_[linkNo]);
     if(directControl){
-        hardware_interface::JointHandle backdoorHandle;
-        backdoorHandle = this->get<hardware_interface::PositionJointInterface>()->getHandle(joint_names_[linkNo]);
+        hardware_interface::JointHandle backdoorHandle; 
+        try{
+            backdoorHandle = this->get<hardware_interface::PositionJointInterface>()->getHandle(joint_names_[linkNo]);
+        }
+        catch(...){
+        ROS_ERROR_STREAM("HANDLE NOT LATCHED");
+        }
         ROS_INFO_STREAM("Latched handle");
+        
         backdoorHandle.setCommand(commandValue);
+        ROS_INFO_STREAM("Joint "<<joint_names_[linkNo]<<" command: "<<backdoorHandle.getCommand());
     }    
     else{
         ROS_ERROR_STREAM("Direct Control has NOT been enabled!");
@@ -278,6 +285,7 @@ void AdeleHW::directCommandWrite(int linkNo, double commandValue){
 
 double AdeleHW::directCommandAccess(int linkNo){
     if(directControl){
+        ROS_INFO_STREAM(actuators[linkNo].command); 
         return actuators[linkNo].command;
     }
     else{
