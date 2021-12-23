@@ -35,7 +35,7 @@ public:
    
 
     bool initializeHardware();
-    void setupListeners();
+    
 
     void updateJointsFromHardware();
     void writeCommandsToHardware();
@@ -100,6 +100,7 @@ protected:
     ros::NodeHandle nh_;
     std::string urdf_string;
     urdf::Model* urdf_model_;
+
 
     ros::Publisher trajPublisher;
 

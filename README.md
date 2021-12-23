@@ -45,3 +45,4 @@ Constructor, accepts 2 parameters.
 Defines the action server running the FollowJointTrajectory action, the FollowAction object. This serves as the main means of accepting plotted trajectories from moveit!.
 ##### FollowAction(onst ros::NodeHandle& nh, std::string name)
 Constructor, accepts 2 parameters and starts the action server
+

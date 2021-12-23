@@ -57,7 +57,6 @@ bool AdeleHW::loadTransmissions(){
         try
         {
             transmission_loader_.reset(new TransmissionInterfaceLoader(this, &transmissions_));
-            
         }
         catch(const std::invalid_argument& ex)
         {
@@ -199,15 +198,7 @@ void AdeleHW::reset()
 }
 */
 
-void AdeleHW::setupListeners(){
-    size_t num_joints = joint_names_.size();
-    std::string prefix = "AdeleHW/act";
-    std::string suffix = "State";
-    for(size_t count = 0; count != num_joints; count++){
-        std::string temp = prefix + std::to_string(count) + suffix;
-        //trajSub[count] = nh_.subscribe(temp, 1000,);
-    }
-}
+
 
 void AdeleHW::updateJointsFromHardware(){
     //TODO: provide script to read from MCU

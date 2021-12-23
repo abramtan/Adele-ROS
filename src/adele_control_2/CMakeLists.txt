@@ -8,6 +8,8 @@ project(adele_control_2)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
+  control_msgs
   controller_manager
   hardware_interface
   joint_limits_interface
@@ -80,6 +82,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
  generate_messages(
    DEPENDENCIES
+   control_msgs
    std_msgs
    trajectory_msgs
  )
@@ -118,7 +121,9 @@ catkin_package(
    ${PROJECT_SOURCE_DIR}/include/
 #  LIBRARIES adele_control_2
   CATKIN_DEPENDS
+    actionlib
     controller_manager
+    control_msgs
     hardware_interface
     joint_limits_interface
     moveit_core 
