@@ -47,7 +47,8 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <!-- Use doc_depend for packages you need only for building documentation: -->
-  <!--   <doc_depend>doxygen</doc_depend> -->
+  <!--   <doc_depend>doxygen</doc_depend> -->4
+  <depend>actionlib</depend>
   <depend>controller_manager</depend>
   <depend>control_msgs</depend>
   <depend>hardware_interface</depend>

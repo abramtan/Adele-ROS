@@ -101,6 +101,7 @@ protected:
     std::string urdf_string;
     urdf::Model* urdf_model_;
 
+
     ros::Publisher trajPublisher;
 
     // ros::Timer my_control_loop;

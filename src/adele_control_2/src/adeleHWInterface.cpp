@@ -57,7 +57,6 @@ bool AdeleHW::loadTransmissions(){
         try
         {
             transmission_loader_.reset(new TransmissionInterfaceLoader(this, &transmissions_));
-            
         }
         catch(const std::invalid_argument& ex)
         {
