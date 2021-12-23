@@ -8,6 +8,7 @@ project(adele_control_2)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  control_msgs
   controller_manager
   hardware_interface
   joint_limits_interface
