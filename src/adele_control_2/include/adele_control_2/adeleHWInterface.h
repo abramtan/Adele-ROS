@@ -35,7 +35,7 @@ public:
    
 
     bool initializeHardware();
-    void setupListeners();
+    
 
     void updateJointsFromHardware();
     void writeCommandsToHardware();

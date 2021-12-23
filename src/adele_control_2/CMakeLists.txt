@@ -80,6 +80,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
  generate_messages(
    DEPENDENCIES
+   control_msgs
    std_msgs
    trajectory_msgs
  )
@@ -119,6 +120,7 @@ catkin_package(
 #  LIBRARIES adele_control_2
   CATKIN_DEPENDS
     controller_manager
+    control_msgs
     hardware_interface
     joint_limits_interface
     moveit_core 
