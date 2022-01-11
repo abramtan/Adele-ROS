@@ -29,7 +29,7 @@ The Adele-ROS workspace has 3 main packages:
 ### adele_control_2
 There are two critical scripts for adele_control_2:
 1. AdeleHWInterface.cpp
-2. [FollowJointTrajectoryServer.cpp](# FollowJointTrajectoryServer)
+2. [FollowJointTrajectoryServer.cpp](####FollowJointTrajectoryServer)
 3. AdeleControlLoop.cpp
 
 #### AdeleHWInterface
@@ -43,6 +43,6 @@ Constructor, accepts 2 parameters.
 
 #### FollowJointTrajectoryServer
 Defines the action server running the FollowJointTrajectory action, the FollowAction object. This serves as the main means of accepting plotted trajectories from moveit!.
-##### FollowAction(onst ros::NodeHandle& nh, std::string name)
+##### FollowAction(const ros::NodeHandle& nh, std::string name)
 Constructor, accepts 2 parameters and starts the action server
 
