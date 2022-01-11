@@ -29,7 +29,7 @@ The Adele-ROS workspace has 3 main packages:
 ### adele_control_2
 There are two critical scripts for adele_control_2:
 1. AdeleHWInterface.cpp
-2. [FollowJointTrajectoryServer.cpp](#### FollowJointTrajectoryServer)
+2. [FollowJointTrajectoryServer.cpp](# FollowJointTrajectoryServer)
 3. AdeleControlLoop.cpp
 
 #### AdeleHWInterface
