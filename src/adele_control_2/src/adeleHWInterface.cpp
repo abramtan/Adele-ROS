@@ -115,7 +115,7 @@ void AdeleHW::registerActuatorInterfaces(){
         ros::shutdown();
     }
     catch(...){
-        ROS_ERROR_STREAM("Not quite sure what went wrong, but interface registration failed");
+        ROS_ERROR_STREAM("Not quite sure what went wrong, but interface registration failed. Stand far away.");
         ros::shutdown();
     }
     
