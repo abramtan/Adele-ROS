@@ -36,7 +36,7 @@ namespace adele_control_2{
 
             void orderSixtySix(const control_msgs::FollowJointTrajectoryGoalConstPtr &goal);
             
-    };
+    }
 
 }
 
